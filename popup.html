@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title> Weather </title>
-    <link rel = "stylesheet" href="index.css" />
+    <link rel = "stylesheet" href="default.css" />
+    <link rel = "stylesheet" href="popup.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e41c456ab1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="date">
+        <p class="today"> </p>
+    </div>
+    <div class="today_weather">
+        <i class="fas today_weather_icon"></i>
+        <p> 12 C </p>        
+
+        <div class="other_weather">
+            <ul class="forecast">
+            </ul>
+        </div>
+    </div>
+
+    <script src="date.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
