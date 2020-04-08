@@ -10,10 +10,27 @@ body{
     font-family: 'Jua', sans-serif;
 }
 
+.normal{
+    color: #7ddc1f;
+}
+
+.bad{
+    color: #fa7e1e;
+}
+
+.veryBad{
+    color: #ff0000;
+}
+
 .date{    
     padding: 10px 10px 50px;
     font-size: 12px;
     color: var(--font-color);
+}
+
+.today_weather .microdust{
+    display: flex;
+    align-items: center;
 }
 
 .today_weather_icon{
@@ -30,9 +47,16 @@ body{
 .today_weather p{
     padding: 10px 0;
     margin-left: 5px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     margin-left: 7px;
+}
+
+.today_weather .microdust .dust{
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 0px;
+    margin-right: 10px;
 }
 
 .today_date{

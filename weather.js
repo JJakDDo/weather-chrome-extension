@@ -96,6 +96,7 @@ function getWeather(lat, long){
     });
 }
 
+//크롬 확장프로그램은 다른 형식으로 local storage에 저장함(아직 구현안한 부분)
 function saveCoords(coordsObj){
     localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
