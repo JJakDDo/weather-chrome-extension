@@ -7,9 +7,6 @@
     },
     "permissions": [
         "activeTab",
-        "geolocation",
-        "https://kit.fontawesome.com/e41c456ab1.js",
-        "https://search.naver.com/"
-    ],
-    "content_security_policy": "script-src 'self' https://kit.fontawesome.com; object-src 'self' "
+        "http://openapi.airkorea.or.kr/*"
+    ]
   }

@@ -1,4 +1,3 @@
-const API_KEY = "";
 const COORDS = "coords";
 const CITY = "Hwaseong";
 
@@ -18,9 +17,13 @@ const weather_icon = {
 };
 
 function printCurrent(){
-    const today_icon = todayForm.querySelector("i");
-    todayForm.querySelector("p").innerText = `${currentTemp}°`;
-    today_icon.classList.add(weather_icon[currentWeather]);
+    const todayForm = document.querySelector(".today_weather");
+    const icon = document.createElement("i");
+    const todayP = document.createElement("p");
+    todayP.innerText = `${currentTemp}°`;
+    icon.classList.add("fas", weather_icon[currentWeather], "today_weather_icon");
+    todayForm.prepend(todayP);
+    todayForm.prepend(icon);
 }
 
 function printForecast(){
@@ -30,7 +33,7 @@ function printForecast(){
         const p = document.createElement("p");
         const pDay = document.createElement("p");
 
-        icon.classList.add("fas", weather_icon[forecastWeather[i]], "today_weather_icon");
+        icon.classList.add("fas", weather_icon[forecastWeather[i]], "other_weather_icon");
         p.innerText = `${forecastTemp[i]}°`;
         pDay.innerText = `${dayKor[(todayInt+i+1)%dayKor.length]}`;
 

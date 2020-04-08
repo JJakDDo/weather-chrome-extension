@@ -73,6 +73,9 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
+.other_weather_icon{
+    font-size: 32px;
+}
 .other_weather .forecast li{
     display: flex;
     flex-direction: column;
