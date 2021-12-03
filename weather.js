@@ -10,19 +10,18 @@ let currentTemp;
 let currentWeather;
 
 const weather_icon = {
-    "Clear": "sunny-outline",
-    "Clouds": "cloud-outline",
-    "Rain": "rainy-outline",
-    "Snow": "snow-outline"
+    "Clear": "fa-sun",
+    "Clouds": "fa-cloud",
+    "Rain": "fa-cloud-showers-heavy",
+    "Snow": "fa-snowflake"
 };
 
 function printCurrent(){
     const todayForm = document.querySelector(".today_weather");
-    const icon = document.createElement("ion-icon");
+    const icon = document.createElement("i");
     const todayP = document.createElement("p");
     todayP.innerText = `${currentTemp}°`;
-    icon.setAttribute("name", weather_icon[currentWeather]);
-    icon.classList.add("today_weather_icon");
+    icon.classList.add("fas", weather_icon[currentWeather], "today_weather_icon");
     todayForm.prepend(todayP);
     todayForm.prepend(icon);
 }
@@ -30,12 +29,11 @@ function printCurrent(){
 function printForecast(){
     for(let i=0;i<forecastTemp.length;i++){
         const li = document.createElement("li");
-        const icon = document.createElement("ion-icon");
+        const icon = document.createElement("i");
         const p = document.createElement("p");
         const pDay = document.createElement("p");
 
-        icon.setAttribute("name", weather_icon[forecastWeather[i]]);
-        icon.classList.add("other_weather_icon");
+        icon.classList.add("fas", weather_icon[forecastWeather[i]], "other_weather_icon");
         p.innerText = `${forecastTemp[i]}°`;
         pDay.innerText = `${dayKor[(todayInt+i+1)%dayKor.length]}`;
 
@@ -74,7 +72,7 @@ function getWeatherByCity(city){
     });
 }
 
-//경도 위도 구해서 해당 위치의 날씨 구하기
+/*경도 위도 구해서 해당 위치의 날씨 구하기
 function getWeather(lat, long){
     fetch(
         `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&APPID=${API_KEY}&units=metric`
@@ -136,11 +134,11 @@ function loadCoords(){
         getWeather(parsedCoords.latitude, parsedCoords.longitude);
     }
 }
-
+*/
 function init(){
-    loadCoords();
+    //loadCoords();
 
-    //getWeatherByCity(CITY);
+    getWeatherByCity(CITY);
 }
 
 init();
