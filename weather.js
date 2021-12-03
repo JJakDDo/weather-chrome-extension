@@ -74,7 +74,7 @@ function getWeatherByCity(city){
     });
 }
 
-/*경도 위도 구해서 해당 위치의 날씨 구하기
+//경도 위도 구해서 해당 위치의 날씨 구하기
 function getWeather(lat, long){
     fetch(
         `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&APPID=${API_KEY}&units=metric`
@@ -136,11 +136,11 @@ function loadCoords(){
         getWeather(parsedCoords.latitude, parsedCoords.longitude);
     }
 }
-*/
-function init(){
-    //loadCoords();
 
-    getWeatherByCity(CITY);
+function init(){
+    loadCoords();
+
+    //getWeatherByCity(CITY);
 }
 
 init();
